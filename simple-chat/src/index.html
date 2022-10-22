@@ -6,12 +6,6 @@
         <title>Send a message</title>
         <link rel="stylesheet" href="./index.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script>
-            // Раскрыть меню доп. информации в блоке .more
-            function myFunction() {
-                document.getElementById("myDropdown").classList.toggle("show");
-            }
-        </script>
     </head>
     <body>
         <div class="container">
@@ -40,8 +34,8 @@
                         </span>
                     </div>
                     <div class="more">
-                        <button onclick="myFunction()" class="dropbtn">
-                            <span class="material-icons">
+                        <button  class="dropbtn">
+                            <span class="material-icons" id="more_vert">
                                 more_vert
                             </span>
                         </button>
