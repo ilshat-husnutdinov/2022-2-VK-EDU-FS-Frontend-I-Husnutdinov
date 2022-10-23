@@ -1,5 +1,7 @@
 import './index.css';
 
+// НАЧАЛО КОДА JS ДЛЯ СТРАНИЦЫ С СООБЩЕНИЯМИ ЧАТА (ДЛЯ МАКЕТА ИЗ ДЗ-2) 
+
 // Раскрыть меню доп. информации в блоке .more
 document.querySelector(".dropbtn").addEventListener("click", function (event) {
     document.getElementById("myDropdown").classList.toggle("show");
@@ -110,9 +112,19 @@ function refresh() {
     });
 }
 
-// перейти на страницу с чатами
+// перейти на страницу с чатами, а также загрузить, распарсить и отправить информацию о 
+// последнем сообщении из LocalStorage в блок с чатом (у меня блок один, с Дженнифер )
 back.addEventListener('click', function (event) {
-    document.location.href = './chats.html';
+    document.getElementById('page1').style.display = 'none';
+    document.getElementById('page2').style.display = 'flex';
+    const lastMessage = getLastMessageFromLocStore();
+    if (lastMessage) {
+        let lastTime = parseTime(new Date(lastMessage['dateTime']));
+        let lastText = lastMessage['message'];
+        textBlock.innerHTML = lastText;
+        timeBlock.innerHTML = lastTime;
+        conditionBlock.innerHTML = '<span class="material-icons">done_all</span>';
+    }
 });
 
 // событие нажатия клавиши Enter
@@ -122,3 +134,38 @@ function handleKeyPress (event) {
         console.log('kyepresss')
     }
 }
+
+// КОНЕЦ КОДА JS ДЛЯ СТРАНИЦЫ С СООБЩЕНИЯМИ ЧАТА (ДЛЯ МАКЕТА ИЗ ДЗ-2) 
+
+// НАЧАЛО КОДА JS ДЛЯ СТРАНИЦЫ С ЧАТАМИ (ДЛЯ МАКЕТА ИЗ ДЗ-3) 
+
+const chat = document.querySelector('.chat');
+const textBlock = document.querySelector('.text');
+const timeBlock = document.querySelector('.time');
+const conditionBlock = document.querySelector('.condition');
+
+/* Делает переход на чат с сообщениями */
+chat.addEventListener('click', function (event) {
+    document.getElementById('page2').style.display = 'none';
+    document.getElementById('page1').style.display = 'flex';
+});
+
+
+// получить последнее сообщение из LocaleStorage
+function getLastMessageFromLocStore() {
+    const infoMessagesFromLocalStore = localStorage.getItem(messageStoreKey);
+    const parseMessagesInfo = JSON.parse(infoMessagesFromLocalStore);
+    if (parseMessagesInfo!==null && Array.isArray(parseMessagesInfo)){
+        return parseMessagesInfo[parseMessagesInfo.length - 1];
+    } 
+    return null;
+}
+
+// парсит время на часы и минут HH:MM
+function parseTime(dateTime) {
+    return [dateTime.getHours(), dateTime.getMinutes()].map(function (x) {
+                return x < 10 ? "0" + x : x
+            }).join(":");
+}
+
+// КОНЕЦ КОДА JS ДЛЯ СТРАНИЦЫ С ЧАТАМИ (ДЛЯ МАКЕТА ИЗ ДЗ-3) 
