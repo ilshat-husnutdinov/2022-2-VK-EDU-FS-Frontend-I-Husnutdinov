@@ -1,4 +1,5 @@
 import './index.css';
+import * as chats from './chats.js'
 
 // НАЧАЛО КОДА JS ДЛЯ СТРАНИЦЫ С СООБЩЕНИЯМИ ЧАТА (ДЛЯ МАКЕТА ИЗ ДЗ-2) 
 
@@ -117,13 +118,15 @@ function refresh() {
 back.addEventListener('click', function (event) {
     document.getElementById('page1').style.display = 'none';
     document.getElementById('page2').style.display = 'flex';
-    const lastMessage = getLastMessageFromLocStore();
+
+    const lastMessage = chats.getLastMessageFromLocStore();
+    
     if (lastMessage) {
-        let lastTime = parseTime(new Date(lastMessage['dateTime']));
+        let lastTime = chats.parseTime(new Date(lastMessage['dateTime']));
         let lastText = lastMessage['message'];
-        textBlock.innerHTML = lastText;
-        timeBlock.innerHTML = lastTime;
-        conditionBlock.innerHTML = '<span class="material-icons">done_all</span>';
+        chats.textBlock.innerHTML = lastText;
+        chats.timeBlock.innerHTML = lastTime;
+        chats.conditionBlock.innerHTML = '<span class="material-icons">done_all</span>';
     }
 });
 
@@ -135,37 +138,3 @@ function handleKeyPress (event) {
     }
 }
 
-// КОНЕЦ КОДА JS ДЛЯ СТРАНИЦЫ С СООБЩЕНИЯМИ ЧАТА (ДЛЯ МАКЕТА ИЗ ДЗ-2) 
-
-// НАЧАЛО КОДА JS ДЛЯ СТРАНИЦЫ С ЧАТАМИ (ДЛЯ МАКЕТА ИЗ ДЗ-3) 
-
-const chat = document.querySelector('.chat');
-const textBlock = document.querySelector('.text');
-const timeBlock = document.querySelector('.time');
-const conditionBlock = document.querySelector('.condition');
-
-/* Делает переход на чат с сообщениями */
-chat.addEventListener('click', function (event) {
-    document.getElementById('page2').style.display = 'none';
-    document.getElementById('page1').style.display = 'flex';
-});
-
-
-// получить последнее сообщение из LocaleStorage
-function getLastMessageFromLocStore() {
-    const infoMessagesFromLocalStore = localStorage.getItem(messageStoreKey);
-    const parseMessagesInfo = JSON.parse(infoMessagesFromLocalStore);
-    if (parseMessagesInfo!==null && Array.isArray(parseMessagesInfo)){
-        return parseMessagesInfo[parseMessagesInfo.length - 1];
-    } 
-    return null;
-}
-
-// парсит время на часы и минут HH:MM
-function parseTime(dateTime) {
-    return [dateTime.getHours(), dateTime.getMinutes()].map(function (x) {
-                return x < 10 ? "0" + x : x
-            }).join(":");
-}
-
-// КОНЕЦ КОДА JS ДЛЯ СТРАНИЦЫ С ЧАТАМИ (ДЛЯ МАКЕТА ИЗ ДЗ-3) 
