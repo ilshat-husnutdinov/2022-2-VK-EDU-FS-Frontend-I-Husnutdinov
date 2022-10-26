@@ -1,25 +1,29 @@
 import './index.css';
+import * as chats from './chats.js'
+
+// НАЧАЛО КОДА JS ДЛЯ СТРАНИЦЫ С СООБЩЕНИЯМИ ЧАТА (ДЛЯ МАКЕТА ИЗ ДЗ-2) 
+
+// Раскрыть меню доп. информации в блоке .more
+document.querySelector(".dropbtn").addEventListener("click", function (event) {
+    document.getElementById("myDropdown").classList.toggle("show");
+});
 
 // Закрыть меню доп. информации в блоке .more при нажатии вне блока .more
 window.addEventListener('click', function(event) {
-if (!event.target.matches('.material-icons')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-    var openDropdown = dropdowns[i];
-    if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
+    if (!event.target.matches('#more_vert')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            openDropdown.classList.remove('show');
+        }
     }
-    }
-}
 })
 
 // Автоматический скролл вниз при отправке нового сообщения
 function scroll() {
-        document.querySelector('.message').scrollTop = 
-        document.querySelector('.message').scrollHeight;
-    }
+    document.querySelector('.message').scrollTop = document.querySelector('.message').scrollHeight;
+}
 
 // Модель информации о сообщении для сохранения в LocaleStorage
 class InfoMessage {
@@ -33,6 +37,7 @@ class InfoMessage {
 const form = document.querySelector('form'); 
 const input = document.querySelector('.form-input');
 const message = document.querySelector('.message');
+const back = document.querySelector('.back');
 
 const messageStoreKey = 'message_store_key';
 let infoMessages = getInfoMessagesFromLocStore();
@@ -108,11 +113,23 @@ function refresh() {
     });
 }
 
-// Раскрыть меню доп. информации в блоке .more
-// function myFunction() {
-//     document.getElementById("myDropdown").classList.toggle("show");
-// }
-// document.querySelector("dropbtn").addEventListener("click", myFunction(this));
+// перейти на страницу с чатами, а также загрузить, распарсить и отправить информацию о 
+// последнем сообщении из LocalStorage в блок с чатом (у меня блок один, с Дженнифер )
+back.addEventListener('click', function (event) {
+    document.getElementById('page1').style.display = 'none';
+    document.getElementById('page2').style.display = 'flex';
+
+    const lastMessage = chats.getLastMessageFromLocStore();
+    
+    if (lastMessage) {
+        let lastTime = chats.parseTime(new Date(lastMessage['dateTime']));
+        let lastText = lastMessage['message'];
+        chats.textBlock.innerHTML = lastText;
+        chats.timeBlock.innerHTML = lastTime;
+        chats.conditionBlock.innerHTML = '<span class="material-icons">done_all</span>';
+    }
+});
+
 // событие нажатия клавиши Enter
 function handleKeyPress (event) {
     if (event.keyCode === 13) {
@@ -120,3 +137,4 @@ function handleKeyPress (event) {
         console.log('kyepresss')
     }
 }
+

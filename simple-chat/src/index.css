@@ -13,9 +13,9 @@ html {
 }
 
 body {
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     height: 100vh;
     background-color: #fff;
     color: #333;
@@ -23,8 +23,12 @@ body {
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 400;
     line-height: 20px;
+    overflow: hidden;
 }
- .container {
+
+/*  НАЧАЛО
+    Стили для страницы с сообщениями чата (для макета из ДЗ-2) */
+.container1 {
     width: 100%;
     height: 100%;
     display: flex;
@@ -40,16 +44,15 @@ body {
     justify-content: space-around;
     flex: 1;
     background-color: #8E24AA;
-    
+    padding: 0 2vw;
     color: rgb(255, 255, 255);
 }
 
-.header > div > span{
-    font-size: calc(24px + 16 * (100vw / 1280));
-}
-
-.dropbtn > span{
-    font-size: calc(24px + 16 * (100vw / 1280));
+.container1 .photo {
+    margin-left: auto;
+    margin-right: 5vw;
+    display: flex;
+    align-items: center;
 }
 
 .photo img{
@@ -112,6 +115,7 @@ body {
     overflow: auto;
 }
 .message-container {
+    word-break: break-all;
     display: flex;
     flex-direction: column;
     background-color: #e6cff8;
@@ -170,11 +174,11 @@ input[type=submit] {
     visibility: collapse;
 }
 
-/* СТИЛИ ДЛЯ БЛОКА .footer И ЕГО ДОЧЕРНИХ ЭЛЕМЕНТОВ
-   КОНЕЦ */
+/*  СТИЛИ ДЛЯ БЛОКА .footer И ЕГО ДОЧЕРНИХ ЭЛЕМЕНТОВ
+    КОНЕЦ */
 
-
-
+/*  Стили для страницы с сообщениями чата (для макета из ДЗ-2)
+    КОНЕЦ */
 
 
 
