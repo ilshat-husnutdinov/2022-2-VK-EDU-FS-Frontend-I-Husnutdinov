@@ -1,7 +1,7 @@
 import './index.css';
 import * as chats from './chats.js'
 
-// НАЧАЛО КОДА JS ДЛЯ СТРАНИЦЫ С СООБЩЕНИЯМИ ЧАТА (ДЛЯ МАКЕТА ИЗ ДЗ-2) 
+// НАЧАЛО КОДА JS ДЛЯ СТРАНИЦЫ С СООБЩЕНИЯМИ ЧАТА (ДЛЯ МАКЕТА ИЗ ДЗ-2)
 
 // Раскрыть меню доп. информации в блоке .more
 document.querySelector(".dropbtn").addEventListener("click", function (event) {
@@ -28,13 +28,13 @@ function scroll() {
 // Модель информации о сообщении для сохранения в LocaleStorage
 class InfoMessage {
     constructor(message, author, dateTime){
-        this.message = message;     // сообщение   
+        this.message = message;     // сообщение
         this.author = author;       // автор
         this.dateTime = dateTime;   // время отправки
     }
 }
 
-const form = document.querySelector('form'); 
+const form = document.querySelector('form');
 const input = document.querySelector('.form-input');
 const message = document.querySelector('.message');
 const back = document.querySelector('.back');
@@ -42,7 +42,8 @@ const back = document.querySelector('.back');
 const messageStoreKey = 'message_store_key';
 let infoMessages = getInfoMessagesFromLocStore();
 
-refresh(); 
+// получить сообщения при обновлении
+refresh();
 
 form.addEventListener('submit', handleSubmit.bind(this));
 // form.addEventListener('keypress', this.handleKeyPress.bind(this));
@@ -50,14 +51,22 @@ form.addEventListener('submit', handleSubmit.bind(this));
 // отправить сообщение
 function handleSubmit (event) {
     event.preventDefault();
+
     if (input.value.trim() === '') {
         input.value = '';
         return;
     }
 
     const info = new InfoMessage(input.value, 'ilshat', new Date());
-    createBlockMessage(info);
+    createBlockMessage(info, 'message-container-animate');
+
+    const animated_msg = document.querySelector('.message-container-animate');
+    animated_msg.addEventListener('animationend', function() {
+        animated_msg.className = 'message-container';
+    })
+
     scroll();
+
     setInfoMessagesToLocStore(info);
     input.value = '';
 }
@@ -75,9 +84,9 @@ function setInfoMessagesToLocStore(info) {
 }
 
 // создать блок сообщения
-function createBlockMessage(info) {
-    let container = document.createElement('div'); 
-    container.className = 'message-container';
+function createBlockMessage(info, className) {
+    let container = document.createElement('div');
+    container.className = className;
 
     let message_text = document.createElement('div')
     message_text.className = 'message-text';
@@ -90,8 +99,8 @@ function createBlockMessage(info) {
         return x < 10 ? "0" + x : x
     }).join(":");
     message_time.innerHTML = '<p>' + res + '</p>';
-    
-    let message_status = document.createElement('span'); 
+
+    let message_status = document.createElement('span');
     message_status.className = 'material-icons';
     message_status.innerHTML = 'done_all'
 
@@ -102,25 +111,24 @@ function createBlockMessage(info) {
 }
 
 // получить сообщения при обновлении
-function refresh() {          
-    
+function refresh() {
     if (!infoMessages) {
         infoMessages = new Array();
         return;
     }
     infoMessages.forEach(x => {
-        createBlockMessage(x);
+        createBlockMessage(x,'message-container');
     });
 }
 
-// перейти на страницу с чатами, а также загрузить, распарсить и отправить информацию о 
+// перейти на страницу с чатами, а также загрузить, распарсить и отправить информацию о
 // последнем сообщении из LocalStorage в блок с чатом (у меня блок один, с Дженнифер )
 back.addEventListener('click', function (event) {
     document.getElementById('page1').style.display = 'none';
     document.getElementById('page2').style.display = 'flex';
 
     const lastMessage = chats.getLastMessageFromLocStore();
-    
+
     if (lastMessage) {
         let lastTime = chats.parseTime(new Date(lastMessage['dateTime']));
         let lastText = lastMessage['message'];
