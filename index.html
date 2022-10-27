@@ -2,16 +2,16 @@
 <html>
     <head lang="en">
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <title>Send a message</title>
         <link rel="stylesheet" href="./index.css">
         <link rel="stylesheet" href="./chats.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="index.style.css" rel="stylesheet"><link href="chats.style.css" rel="stylesheet"></head>
     <body>
-        <div class="container1" id="page1" > <!-- Контейнер страницы с сообщениями чата -->  
-            <div class="header">  <!-- Шапка чата с иконками -->  
-                <div class="back"> 
+        <div class="container1" id="page1" > <!-- Контейнер страницы с сообщениями чата -->
+            <div class="header">  <!-- Шапка чата с иконками -->
+                <div class="back">
                     <span class="material-icons">
                         arrow_back
                     </span>
@@ -43,20 +43,20 @@
                     <div id="myDropdown" class="dropdown-content">
                       <a href="#">Info</a>
                       <a href="#">Mute</a>
-                    </div>      
-                </div>               
+                    </div>
+                </div>
             </div>
-            <div class="message"></div> <!-- Блок с сообщениями -->  
-            <div class="footer"> <!-- Поле ввода сообщения -->  
+            <div class="message"></div> <!-- Блок с сообщениями -->
+            <div class="footer"> <!-- Поле ввода сообщения -->
                 <form class="form" action="/">
                     <input class="form-input" name="message-text" placeholder="Сообщение" type="text">
                     <span class="material-icons">attachment</span>
                 </form>
-                
+
             </div>
         </div>
-        <div class="container2" id="page2" style="display: none;"> <!-- Контейнер страницы с чатами -->  
-            <header> <!-- Шапка с иконками --> 
+        <div class="container2" id="page2" style="display: none;"> <!-- Контейнер страницы с чатами -->
+            <header> <!-- Шапка с иконками -->
                 <div class="menu">
                     <span class="material-icons">menu</span>
                 </div>
@@ -67,7 +67,7 @@
                     <span class="material-icons">search</span>
                 </div>
             </header>
-            <div class="chats"> <!-- Блок с чатами --> 
+            <div class="chats"> <!-- Блок с чатами -->
                 <div class="chat">
                     <div class="photo">
                         <img src="https://simg.nicepng.com/png/small/356-3568165_blank-profile-picture-female.png"  >
@@ -82,12 +82,12 @@
                             <div class="condition"><span class="material-icons"></span></div>
                         </div>
                     </div>
-                </div>        
+                </div>
             </div>
-            <div class="create-chat"> <!-- Блок с парящей кнопкой --> 
+            <div class="create-chat"> <!-- Блок с парящей кнопкой -->
                 <span class="material-icons">edit</span>
             </div>
-        </div>  
+        </div>
         <script type="text/javascript" src="./index.js"></script>
         <script type="text/javascript" src="./chats.js"></script>
     <script type="text/javascript" src="index.bundle.js"></script><script type="text/javascript" src="chats.bundle.js"></script></body>

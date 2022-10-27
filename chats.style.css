@@ -34,7 +34,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-    
+
 /*  НАЧАЛО
     Стили для блока header и его дочерних элементов */
 header {
@@ -45,20 +45,36 @@ header {
     font-size: calc(10px + 24 * (100vw / 1280));
     padding: 2vh 0;
 }
-    
+
 .menu {
     margin-left: 2vw;
     margin-right: 10vw;
 }
-    
+
 .search {
     margin-left: auto;
     margin-right: 2vw;
 }
-    
+
 .photo img{
     border-radius: 50%;
     width:8vh;
+}
+
+.menu > span, .search > span {
+    padding: 1vh;
+    border-radius: 50%;
+    transition: 0.5s ease-out;
+}
+
+.menu > span:hover, .search > span:hover {
+    background-color: #af3bcf;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 0px #af3bcf;
+}
+
+.menu > span:active, .search > span:active {
+    background-color: #d22fff;
 }
 /*  КОНЕЦ
     Стили для блока header и его дочерних элементов */
@@ -70,10 +86,21 @@ header {
     overflow: auto;
     height: 100vh;
 }
+
 .chat {
     display: flex;
     align-items: stretch;
-    margin-top: 1vh;
+    padding-top: 1vh;
+    transition: 0.5s ease-out;
+}
+
+.chat:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.chat:active {
+    background-color: rgb(192, 192, 192);
 }
 
 .container2 .photo {
@@ -82,7 +109,7 @@ header {
     display: flex;
     align-items: center;
 }
-    
+
 .chat-info {
     padding-top: 1vh;
     border-bottom: 1px solid #d1d1d1;
@@ -91,15 +118,16 @@ header {
     justify-content: space-between;
     align-items: center;
 }
-    
+
 .name-text {
     height: 100%;
 }
+
 .name {
     /* padding-top: 1vh ; */
     font-size: calc(14px + 24 * (100vw / 1280));
 }
-    
+
 .text {
     white-space: nowrap;
     padding-top: 1vh;
@@ -110,7 +138,7 @@ header {
     min-height: 5vh;
     max-width: 55vw;
 }
-    
+
 .container2 .info {
     display: flex;
     flex-direction: column;
@@ -118,7 +146,7 @@ header {
     height: 100%;
     margin-right: 2vw;
 }
-    
+
 .condition {
     padding-top: 1vh;
     color: #8E24AA;
@@ -142,7 +170,49 @@ header {
     justify-content: center;
     border-radius: 50%;
     box-shadow: 0px 5px 7px 1px rgb(0 0 0 / 20%);
+    transition: 1s ease-out;
 }
-    
+
+.create-chat:hover {
+    animation: shadow_to_zero 1s 1, pulse 2s infinite;
+    cursor: pointer;
+    animation-delay: 0s, 1s;
+    background-color: #ffcc00;
+    box-shadow:none;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+      box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+      box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+
+.create-chat:active {
+    background-color: #ffb300;
+    animation: none;
+}
 /*  Стили для страницы с чатами (для макета из ДЗ-3)
     КОНЕЦ */
+
+
