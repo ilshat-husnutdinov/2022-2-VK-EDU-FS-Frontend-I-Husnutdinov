@@ -1,5 +1,5 @@
 import './PageChatList.css';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
     ChatListHeader,
     ChatList,

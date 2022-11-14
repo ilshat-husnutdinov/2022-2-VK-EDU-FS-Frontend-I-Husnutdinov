@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import './ChatList.css';
 import { Chat } from "./Chat";
 import { getLastMessageFromLocStore } from "../../../utils";
