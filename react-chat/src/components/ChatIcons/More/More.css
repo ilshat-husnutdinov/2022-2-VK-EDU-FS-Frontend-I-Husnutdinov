@@ -1,0 +1,48 @@
+#more_vert {
+    padding: 1vh;
+    border-radius: 50%;
+    transition: 0.5s ease-out;
+}
+
+#more_vert:hover {
+    background-color: #af3bcf;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 0px #af3bcf;
+}
+
+#more_vert:active {
+    background-color: #d22fff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 30vw;
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    top: 12%;
+    right: 5%;
+    z-index: 100;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    font-size: calc(8px + 20 * (100vw / 1280));
+    color: black;
+    padding: 2vh 3vw;
+    text-decoration: none;
+    display: block;
+    transition: 0.5s ease-out;
+}
+
+/* Change color of dropdown links on hover and active */
+.dropdown-content a:hover {background-color: #ddd}
+
+.dropdown-content a:active {background-color: rgb(192, 192, 192);}
+
+.more > button {
+    color: inherit;
+    border: none;
+    background: inherit;
+}

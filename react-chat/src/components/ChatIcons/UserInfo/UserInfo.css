@@ -1,0 +1,8 @@
+.info .name{
+    font-size: calc(13px + 16 * (100vw / 1280));
+}
+
+.info .last-visit{
+    color: rgb(184 115 201);
+    font-size: calc(8px + 16 * (100vw / 1280));
+}

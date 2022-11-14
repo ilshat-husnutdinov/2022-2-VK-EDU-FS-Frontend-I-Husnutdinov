@@ -1,0 +1,41 @@
+.chatInfo {
+    padding-top: 1vh;
+    border-bottom: 1px solid #d1d1d1;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nameText {
+    height: 100%;
+}
+
+.name {
+    /* padding-top: 1vh ; */
+    font-size: calc(14px + 24 * (100vw / 1280));
+}
+
+.text {
+    white-space: nowrap;
+    padding-top: 1vh;
+    color: grey;
+    font-size: calc(10px + 24 * (100vw / 1280));
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 5vh;
+    max-width: 55vw;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
+    margin-right: 2vw;
+}
+
+.condition {
+    padding-top: 1vh;
+    color: #8E24AA;
+}

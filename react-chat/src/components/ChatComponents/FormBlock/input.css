@@ -1,0 +1,36 @@
+.footer {
+    border-top: 1px solid rgba(25, 25, 25, 0.32);
+    min-height: 30px;
+}
+
+.form-input {
+    border: none;
+    padding: 12px;
+    width: 100%;
+    outline: none;
+}
+
+.footer .form {
+    display: flex;
+    align-items: center;
+}
+
+.form .material-icons {
+    color: rgb(133, 133, 133);
+    padding: 1vh;
+    border-radius: 50%;
+    transition: 0.5s ease-out;
+}
+
+.form .material-icons:hover {
+    cursor: pointer;
+    color: rgb(100, 100, 100);
+}
+
+.form .material-icons:active {
+    color: rgb(75, 75, 75);
+}
+
+input[type=submit] {
+    visibility: collapse;
+}
