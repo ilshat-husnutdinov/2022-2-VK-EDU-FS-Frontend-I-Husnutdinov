@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import './More.css';
+import styles from './More.module.css';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+
 
 export function More() {
     const [IsOpen, setIsOpen] = useState(false)
@@ -15,9 +17,10 @@ export function More() {
     React.useEffect(() => {
         window.addEventListener('click', function(e) {
             e.preventDefault();
-
-            if (!e.target.matches('#more_vert')) {
+            console.log(e.type)
+            if (!e.target.closest('.'+styles.more_vert)) {
                 setIsOpen(false);
+                console.log(e.target)
             }
         })
     },
@@ -25,13 +28,13 @@ export function More() {
 
 
     return (
-        <div className="more">
-            <button  className="dropbtn" onClick={handleClick}>
-                <span className="material-icons" id="more_vert">
-                    more_vert
+        <div>
+            <button  className={styles.dropbtn} onClick={handleClick}>
+                <span className={styles.more_vert}>
+                    <MoreVertIcon></MoreVertIcon>
                 </span>
             </button>
-            <div id="myDropdown" className="dropdown-content" style={{display:changeDisplay()}}>
+            <div className={styles.dropdown_content} style={{display:changeDisplay()}}>
               <a href="/#">Info</a>
               <a href="/#">Mute</a>
             </div>

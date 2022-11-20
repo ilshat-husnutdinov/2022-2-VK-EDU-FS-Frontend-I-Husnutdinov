@@ -1,28 +1,25 @@
-import React from 'react';
-import './Messages.css'
+import React, {useEffect} from 'react';
+import styles from './Messages.module.css';
 import { Message } from '../../../components/Message';
+import { scroll } from '../../../utils';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 export function Messages(props) {
 
+    useEffect(() => {
+		scroll(styles.message);
+    },
+    [props.chatMessages]);
+
     return (
-            <div className='message'>
+            <div className={styles.message}>
                 <TransitionGroup>
                     {props.chatMessages.map(chatMsg =>
-                        <CSSTransition key={chatMsg.id} timeout={300} classNames='msg'>
-                            <Message text={chatMsg.text} time={chatMsg.time}  />
+                        <CSSTransition key={chatMsg.id} timeout={300} classNames={styles.msg}>
+                            <Message text={chatMsg.text} time={chatMsg.time}/>
                         </CSSTransition>
                     )}
                 </TransitionGroup>
             </div>
     )
-            // <div className='message'>
-
-            //      {props.chatMessages.map(chatMsg =>
-
-            //             <Message text={chatMsg.text} time={chatMsg.time}  />
-
-            //         )}
-            // </div>
-
 }

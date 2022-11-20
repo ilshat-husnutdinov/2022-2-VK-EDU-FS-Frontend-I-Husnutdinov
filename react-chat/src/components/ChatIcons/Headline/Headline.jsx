@@ -1,9 +1,9 @@
 import React from "react";
-import './Headline.css';
+import styles from './Headline.module.css';
 
 export function Headline() {
     return (
-        <div className="headline">
+        <div className={styles.headline}>
             Messenger
         </div>
     )

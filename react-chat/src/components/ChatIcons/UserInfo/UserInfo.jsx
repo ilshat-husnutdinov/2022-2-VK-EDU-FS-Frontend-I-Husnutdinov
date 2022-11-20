@@ -1,14 +1,14 @@
 import React from "react";
-import './UserInfo.css';
+import styles from './UserInfo.module.css';
 
 
 export function UserInfo() {
     return(
-        <div className="info">
-            <div className="name">
+        <div className={styles.info}>
+            <div className={styles.name}>
                 Дженниффер
             </div>
-            <div className="last-visit">
+            <div className={styles.last_visit}>
                 была 2 часа назад
             </div>
         </div>

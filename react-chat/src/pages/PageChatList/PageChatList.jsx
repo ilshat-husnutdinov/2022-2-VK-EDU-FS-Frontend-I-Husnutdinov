@@ -1,4 +1,4 @@
-import './PageChatList.css';
+import styles from './PageChatList.module.css';
 import React from 'react';
 import {
     ChatListHeader,
@@ -9,7 +9,7 @@ import {
 
 export function PageChatList(props) {
     return (
-        <div className='PageChatList'  style={{display:props.PageChatListDisplay}}>
+        <div className={styles.page_chatList}  style={{display:props.PageChatListDisplay}}>
             <ChatListHeader></ChatListHeader>
             <ChatList ChangeDisplay={props.ChangeDisplay}></ChatList>
             <CreateChat></CreateChat>

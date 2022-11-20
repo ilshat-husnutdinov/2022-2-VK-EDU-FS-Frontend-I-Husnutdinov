@@ -1,20 +1,17 @@
 .menu {
-    margin-left: 2vw;
     margin-right: 10vw;
-}
-
-.menu > span {
+    display: flex;
     padding: 1vh;
     border-radius: 50%;
     transition: 0.5s ease-out;
 }
 
-.menu > span:hover {
+.menu:hover {
     background-color: #af3bcf;
     cursor: pointer;
     box-shadow: 0px 0px 5px 0px #af3bcf;
 }
 
-.menu > span:active {
+.menu:active {
     background-color: #d22fff;
 }

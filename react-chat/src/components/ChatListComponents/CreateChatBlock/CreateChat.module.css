@@ -1,4 +1,4 @@
-.create-chat {
+.create_chat {
     color: grey;
     position: absolute;
     bottom: 5vh;
@@ -15,7 +15,7 @@
     transition: 1s ease-out;
 }
 
-.create-chat:hover {
+.create_chat:hover {
     animation: shadow_to_zero 1s 1, pulse 2s infinite;
     cursor: pointer;
     animation-delay: 0s, 1s;
@@ -35,7 +35,7 @@
   }
 }
 
-.create-chat:active {
+.create_chat:active {
     background-color: #ffb300;
     animation: none;
 }

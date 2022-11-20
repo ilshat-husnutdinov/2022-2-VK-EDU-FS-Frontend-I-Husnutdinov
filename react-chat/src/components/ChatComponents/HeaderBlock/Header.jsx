@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.css'
+import styles from './Header.module.css';
 import {
     ArrowBack,
     UserPhoto,
@@ -10,7 +10,7 @@ import {
 
 export function Header(props) {
     return (
-        <div className="header">
+        <div className={styles.header}>
             <ArrowBack ChangeDisplay={props.ChangeDisplay}></ArrowBack>
             <UserPhoto></UserPhoto>
             <UserInfo></UserInfo>

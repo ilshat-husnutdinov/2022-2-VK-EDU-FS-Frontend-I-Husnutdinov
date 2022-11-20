@@ -1,6 +1,6 @@
-import './PageChat.css';
+import styles from './PageChat.module.css';
 import React, { useState, useEffect } from 'react';
-import { setInfoMessagesToLocStore, getInfoMessagesFromLocStore, scroll } from '../../utils';
+import { setInfoMessagesToLocStore, getInfoMessagesFromLocStore} from '../../utils';
 import {
 	Header,
 	Messages,
@@ -18,10 +18,6 @@ export function PageChat(props) {
     },
     []);
 
-	useEffect(() => {
-		scroll();
-    },
-    [chatMessages]);
 
 	const addMessage = (newMsg) => {
 		setChatMessages([...chatMessages,newMsg]);
@@ -29,7 +25,7 @@ export function PageChat(props) {
 	}
 
 	return (
-		<div className='PageChat' style={{display:props.PageChatDisplay}}>
+		<div className={styles.page_chat} style={{display:props.PageChatDisplay}}>
 			<Header ChangeDisplay={props.ChangeDisplay}></Header>
 			<Messages chatMessages={chatMessages} ></Messages>
 			<InputMessage add={addMessage}></InputMessage>

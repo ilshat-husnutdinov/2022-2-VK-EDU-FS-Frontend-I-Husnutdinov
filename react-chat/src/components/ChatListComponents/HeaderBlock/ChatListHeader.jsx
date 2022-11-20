@@ -1,4 +1,4 @@
-import './ChatListHeader.css';
+import styles from './ChatListHeader.module.css';
 import React from "react";
 import {
     Search,
@@ -8,10 +8,10 @@ import {
 
 export function ChatListHeader() {
     return (
-        <header>
-                <Menu></Menu>
-                <Headline></Headline>
-                <Search></Search>
-        </header>
+        <div className={styles.header}>
+            <Menu></Menu>
+            <Headline></Headline>
+            <Search></Search>
+        </div>
     )
 }

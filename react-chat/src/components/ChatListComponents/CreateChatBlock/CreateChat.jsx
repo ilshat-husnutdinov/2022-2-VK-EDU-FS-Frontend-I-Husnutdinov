@@ -1,10 +1,12 @@
 import React from "react";
-import './CreateChat.css';
+import styles from  './CreateChat.module.css';
+import EditIcon from '@mui/icons-material/Edit';
+
 
 export function CreateChat() {
     return (
-        <div className="create-chat">
-                <span className="material-icons">edit</span>
+        <div className={styles.create_chat}>
+            <EditIcon></EditIcon>
         </div>
     )
 }

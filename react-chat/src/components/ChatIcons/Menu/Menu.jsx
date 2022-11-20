@@ -1,11 +1,11 @@
 import React from 'react';
-import './Menu.css';
-
+import styles from './Menu.module.css';
+import MenuIcon from '@mui/icons-material/Menu';
 
 export function Menu() {
     return (
-        <div className="menu">
-             <span className="material-icons">menu</span>
+        <div className={styles.menu}>
+            <MenuIcon></MenuIcon>
         </div>
     )
 }

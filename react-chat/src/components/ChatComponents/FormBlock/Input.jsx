@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './input.css'
+import styles from './input.module.css';
+import AttachmentIcon from '@mui/icons-material/Attachment';
 
 
 export function InputMessage(props) {
@@ -27,19 +28,20 @@ export function InputMessage(props) {
     }
 
     return (
-        <div className="footer">
-                <form className="form" onSubmit={handleSubmit} >
+        <div className={styles.footer}>
+                <form className={styles.form} onSubmit={handleSubmit} >
                     <input
                         value={value}
                         onChange={e => setValue(e.target.value)}
-                        className="form-input"
+                        className={styles.form_input}
                         name="message-text"
                         placeholder='Сообщение'
                         type="text"
                     />
-                    <span className="material-icons">attachment</span>
+                    <span className={styles.attachment}>
+                        <AttachmentIcon></AttachmentIcon>
+                    </span>
                 </form>
-
         </div>
     )
 }

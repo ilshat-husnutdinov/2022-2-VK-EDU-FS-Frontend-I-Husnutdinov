@@ -1,4 +1,4 @@
-.message-container {
+.message_container {
     position: relative;
     word-break: break-all;
     display: flex;
@@ -12,7 +12,7 @@
     margin: 5px 5px 5px auto;
 }
 
-.message-container::before {
+.message_container::before {
     transform: rotate(-45deg);
     content: ' ';
     position: absolute;
@@ -23,7 +23,7 @@
     border: 8px solid;
     border-color: transparent #b1aaaa transparent transparent;
 }
-.message-container::after{
+.message_container::after {
     transform: rotate(-45deg);
     content: ' ';
     position: absolute;
@@ -35,7 +35,7 @@
     border-color: transparent #e6cff8 transparent transparent;
 }
 
-.message-info {
+.message_info {
     font-size: calc(10px + 16 * (100vw / 1280));
     display: flex;
     padding-top: inherit;
@@ -43,18 +43,18 @@
     justify-content: flex-end;
 }
 
-.message-status {
+.message_status {
     align-items: flex-end;
     display: flex;
 }
 
-.message-status span{
-    font-size: calc(10px + 16 * (100vw / 1280));
+.status {
+    display: flex;
     color: #8E24AA;
     margin-left: 5px;
 }
 
-.message-text {
+.message_text {
     padding: 5px 5px 0px 5px;
     font-size: calc(12px + 16 * (100vw / 1280));
 }

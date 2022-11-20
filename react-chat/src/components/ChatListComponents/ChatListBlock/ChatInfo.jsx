@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import classes from './ChatInfo.module.css';
+import styles from './ChatInfo.module.css';
 import { parseTime } from "../../../utils";
+import DoneAllIcon from '@mui/icons-material/DoneAll';
+
 
 export function ChatInfo({lastMessage}) {
     const [text, setText] = useState()
@@ -11,20 +13,20 @@ export function ChatInfo({lastMessage}) {
         if (lastMessage) {
             setText(lastMessage.text);
             setTime(lastMessage.time);
-            setCondition('done_all')
+            setCondition(<DoneAllIcon></DoneAllIcon>)
         }
     }, [lastMessage])
 
     return (
-        <div className={classes.chatInfo}>
-            <div className={classes.nameText}>
-                <div className={classes.name}>Дженниффер</div>
-                <div className={classes.text}>{text}</div>
+        <div className={styles.chatInfo}>
+            <div className={styles.nameText}>
+                <div className={styles.name}>Дженниффер</div>
+                <div className={styles.text}>{text}</div>
             </div>
-            <div className={classes.info}>
-                <div className={classes.time}>{parseTime(time)}</div>
-                <div className={classes.condition}>
-                    <span className="material-icons">{condition}</span>
+            <div className={styles.info}>
+                <div className={styles.time}>{parseTime(time)}</div>
+                <div className={styles.condition}>
+                    {condition}
                 </div>
             </div>
         </div>

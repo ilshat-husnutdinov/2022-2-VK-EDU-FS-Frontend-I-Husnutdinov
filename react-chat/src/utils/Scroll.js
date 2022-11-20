@@ -1,3 +1,3 @@
-export function scroll() {
-    document.querySelector('.message').scrollTop = document.querySelector('.message').scrollHeight;
+export function scroll(selectorName) {
+    document.querySelector(`.${selectorName}`).scrollTop = document.querySelector(`.${selectorName}`).scrollHeight;
 }

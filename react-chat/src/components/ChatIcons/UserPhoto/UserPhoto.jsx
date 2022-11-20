@@ -1,11 +1,11 @@
 import React from "react";
-import './UserPhoto.css'
+import styles from './UserPhoto.module.css';
 
 
 export function UserPhoto() {
     return (
-        <div className="photo">
-            <img src="https://simg.nicepng.com/png/small/356-3568165_blank-profile-picture-female.png" alt='' />
+        <div className={styles.photo}>
+            <img className={styles.image} src="https://simg.nicepng.com/png/small/356-3568165_blank-profile-picture-female.png" alt='UserPhoto' />
         </div>
     )
 }

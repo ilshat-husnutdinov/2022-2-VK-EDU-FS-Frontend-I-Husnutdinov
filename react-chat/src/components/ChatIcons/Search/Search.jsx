@@ -1,12 +1,11 @@
 import React from "react";
-import './Search.css';
+import styles from './Search.module.css';
+import SearchIcon from '@mui/icons-material/Search';
 
 export function Search() {
     return (
-        <div className="search">
-            <span className="material-icons">
-                search
-            </span>
+        <div className={styles.search}>
+            <SearchIcon></SearchIcon>
         </div>
     )
 }
