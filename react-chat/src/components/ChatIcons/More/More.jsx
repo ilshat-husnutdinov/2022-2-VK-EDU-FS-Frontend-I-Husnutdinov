@@ -17,15 +17,12 @@ export function More() {
     React.useEffect(() => {
         window.addEventListener('click', function(e) {
             e.preventDefault();
-            console.log(e.type)
             if (!e.target.closest('.'+styles.more_vert)) {
                 setIsOpen(false);
-                console.log(e.target)
             }
         })
     },
     []);
-
 
     return (
         <div>
