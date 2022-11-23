@@ -15,7 +15,10 @@ export function Messages(props) {
             <div className={styles.message}>
                 <TransitionGroup>
                     {props.chatMessages.map(chatMsg =>
-                        <CSSTransition key={chatMsg.id} timeout={300} classNames={styles.msg}>
+                        <CSSTransition key={chatMsg.id} timeout={300} classNames={{
+                            enter: styles.msg_enter,
+                            enterActive: styles.msg_enter_active,
+                        }}>
                             <Message text={chatMsg.text} time={chatMsg.time}/>
                         </CSSTransition>
                     )}

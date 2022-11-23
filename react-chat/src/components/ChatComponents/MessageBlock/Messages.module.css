@@ -6,11 +6,11 @@
     overflow: auto;
 }
 
-.msg-enter {
+.msg_enter {
     opacity: 0;
 }
 
-.msg-enter-active {
+.msg_enter_active {
     opacity: 1;
     transition: opacity 300ms ease-in;
 }
