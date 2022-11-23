@@ -14,13 +14,16 @@ export function More() {
         return IsOpen ? 'block' : 'none'
     }
 
+    const handleClickOutside = e => {
+        e.preventDefault();
+        if (!e.target.closest('.'+styles.more_vert)) {
+            setIsOpen(false);
+        }
+    }
+
     React.useEffect(() => {
-        window.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (!e.target.closest('.'+styles.more_vert)) {
-                setIsOpen(false);
-            }
-        })
+        window.addEventListener('click', handleClickOutside);
+        return () => window.removeEventListener('click', handleClickOutside);
     },
     []);
 
