@@ -1,0 +1,11 @@
+.photo {
+    margin-left: 2vw;
+    margin-right: 10vw;
+    display: flex;
+    align-items: center;
+}
+
+.image {
+    border-radius: 50%;
+    width:8vh;
+}

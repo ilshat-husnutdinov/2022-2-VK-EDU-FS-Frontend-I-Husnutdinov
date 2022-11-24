@@ -1,0 +1,16 @@
+.chat {
+    display: flex;
+    align-items: stretch;
+    padding-top: 1vh;
+    transition: 0.5s ease-out;
+}
+
+.chat:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.chat:active {
+    background-color: rgb(192, 192, 192);
+}
+

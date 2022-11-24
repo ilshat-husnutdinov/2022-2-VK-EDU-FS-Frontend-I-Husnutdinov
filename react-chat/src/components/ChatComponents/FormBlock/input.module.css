@@ -1,0 +1,37 @@
+.footer {
+    border-top: 1px solid rgba(25, 25, 25, 0.32);
+    min-height: 30px;
+}
+
+.form_input {
+    border: none;
+    padding: 12px;
+    width: 100%;
+    outline: none;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+}
+
+.attachment {
+    color: rgb(133, 133, 133);
+    padding: 1vh;
+    border-radius: 50%;
+    transition: 0.5s ease-out;
+}
+
+.attachment:hover {
+    cursor: pointer;
+    color: rgb(100, 100, 100);
+}
+
+.attachment:active {
+    color: rgb(75, 75, 75);
+}
+
+/* input[type=submit] {
+    visibility: collapse;
+
+} */

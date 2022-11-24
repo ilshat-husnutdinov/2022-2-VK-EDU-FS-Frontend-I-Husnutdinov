@@ -1,0 +1,41 @@
+.create_chat {
+    color: grey;
+    position: absolute;
+    bottom: 5vh;
+    right: 5vh;
+    background-color: #ffca00ba;
+    height: 8vh;
+    width: 8vh;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0px 5px 7px 1px rgb(0 0 0 / 20%);
+    transition: 1s ease-out;
+}
+
+.create_chat:hover {
+    animation: shadow_to_zero 1s 1, pulse 2s infinite;
+    cursor: pointer;
+    animation-delay: 0s, 1s;
+    background-color: #ffcc00;
+    box-shadow:none;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+  }
+  70% {
+      box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+  }
+  100% {
+      box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+
+.create_chat:active {
+    background-color: #ffb300;
+    animation: none;
+}

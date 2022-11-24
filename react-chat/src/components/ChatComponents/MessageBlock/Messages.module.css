@@ -1,0 +1,25 @@
+.message {
+    flex: 8;
+    padding: 5px;
+    padding-right: 15px;
+    background-color: #e8e8e8;
+    overflow: auto;
+}
+
+.msg_enter {
+    opacity: 0;
+}
+
+.msg_enter_active {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+}
+
+/* .msg-exit {
+    opacity: 1;
+}
+
+.msg-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+} */
