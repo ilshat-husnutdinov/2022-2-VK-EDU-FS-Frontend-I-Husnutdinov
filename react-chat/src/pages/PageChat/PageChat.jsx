@@ -8,7 +8,7 @@ import {
 } from '../../components';
 
 
-export function PageChat(props) {
+export function PageChat() {
 	const [chatMessages, setChatMessages] = useState([])
 
 	useEffect(() => {
@@ -25,8 +25,8 @@ export function PageChat(props) {
 	}
 
 	return (
-		<div className={styles.page_chat} style={{display:props.PageChatDisplay}}>
-			<Header ChangeDisplay={props.ChangeDisplay}></Header>
+		<div className={styles.page_chat}>
+			<Header></Header>
 			<Messages chatMessages={chatMessages} ></Messages>
 			<InputMessage add={addMessage}></InputMessage>
 		</div>
