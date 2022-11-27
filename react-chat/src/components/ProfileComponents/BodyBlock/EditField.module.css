@@ -1,0 +1,36 @@
+.edit_field {
+    margin: 2vh 5vw;
+    background: rgb(237, 237, 237);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.input {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid gray;
+    background: inherit;
+    padding: 0 5vw;
+    padding-top: 1vh;
+    padding-bottom: 2vh;
+    font-size: calc(14px + 20 * (100vw / 1280));
+}
+
+.field_name {
+    color: grey;
+    font-size: calc(10px + 20 * (100vw / 1280));
+    padding: 0 5vw;
+    padding-top: 5px;
+}
+
+.description {
+    background: #fff;
+    color: grey;
+    font-size: calc(10px + 20 * (100vw / 1280));
+    padding: 0 5vw;
+}
+
+
+

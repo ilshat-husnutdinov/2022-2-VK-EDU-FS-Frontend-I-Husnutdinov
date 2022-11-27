@@ -13,7 +13,7 @@ class App extends React.Component {
 			<Router>
 				<Routes>
 					<Route path='/' element={<PageChatList/>} ></Route>
-					<Route path='/chat' element={<PageChat/>} ></Route>
+					<Route path={`/chat/:chatId`} element={<PageChat/>}></Route>
 					<Route path='/profile' element={<PageProfile/>} ></Route>
 				</Routes>
 			</Router>
