@@ -1,30 +1,22 @@
 import React  from 'react';
-import { PageChat } from './pages/PageChat';
-import { PageChatList } from './pages/PageChatList';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+	PageChat,
+	PageChatList,
+	PageProfile,
+} from './pages';
+
 
 class App extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			PageChatDisplay : 'flex',
-			PageChatListDisplay : 'none'
-		};
-		this.ChangeDisplay = this.ChangeDisplay.bind(this);
-	}
-
-	ChangeDisplay() {
-		this.state.PageChatDisplay === 'flex'
-		? this.setState({PageChatDisplay : 'none', PageChatListDisplay : 'flex'})
-		: this.setState({PageChatDisplay : 'flex', PageChatListDisplay : 'none'})
-	}
-
 	render() {
 		return (
-			<div>
-				<PageChat ChangeDisplay={this.ChangeDisplay} PageChatDisplay={this.state.PageChatDisplay} ></PageChat>
-				<PageChatList ChangeDisplay={this.ChangeDisplay} PageChatListDisplay={this.state.PageChatListDisplay}></PageChatList>
-			</div>
-
+			<Router>
+				<Routes>
+					<Route path='/' element={<PageChatList/>} ></Route>
+					<Route path={`/chat/:chatId`} element={<PageChat/>}></Route>
+					<Route path='/profile' element={<PageProfile/>} ></Route>
+				</Routes>
+			</Router>
 		);
 	}
 }

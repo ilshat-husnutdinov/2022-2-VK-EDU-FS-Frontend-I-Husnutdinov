@@ -7,11 +7,11 @@ import {
 } from '../../components';
 
 
-export function PageChatList(props) {
+export function PageChatList() {
     return (
-        <div className={styles.page_chatList}  style={{display:props.PageChatListDisplay}}>
+        <div className={styles.page_chatList} >
             <ChatListHeader></ChatListHeader>
-            <ChatList ChangeDisplay={props.ChangeDisplay}></ChatList>
+            <ChatList></ChatList>
             <CreateChat></CreateChat>
         </div>
     )

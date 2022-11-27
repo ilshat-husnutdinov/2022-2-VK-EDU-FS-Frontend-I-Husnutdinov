@@ -1,5 +1,6 @@
 import styles from './ChatListHeader.module.css';
 import React from "react";
+import { Link } from 'react-router-dom';
 import {
     Search,
     Menu,
@@ -9,7 +10,9 @@ import {
 export function ChatListHeader() {
     return (
         <div className={styles.header}>
-            <Menu></Menu>
+            <Link to='/profile' style={{color:'inherit', textDecoration:'inherit'}}>
+                <Menu></Menu>
+            </Link>
             <Headline></Headline>
             <Search></Search>
         </div>

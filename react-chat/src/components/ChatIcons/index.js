@@ -5,3 +5,4 @@ export * from './Search';
 export * from './More';
 export * from './Menu';
 export * from './Headline';
+export * from './Done';

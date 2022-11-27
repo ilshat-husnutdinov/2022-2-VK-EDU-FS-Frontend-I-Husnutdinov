@@ -1,0 +1,14 @@
+.header {
+    padding: 2vh 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8E24AA;
+    color: #fff;
+    font-size: calc(10px + 24 * (100vw / 1280));
+}
+
+.edit_text {
+    margin-right: auto;
+    margin-left: 10vw;
+}

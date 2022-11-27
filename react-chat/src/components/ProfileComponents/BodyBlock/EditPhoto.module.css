@@ -1,0 +1,26 @@
+.photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3vh 0;
+}
+
+.image {
+    border-radius: 50%;
+    height: 12vh;
+    width: 12vh;
+}
+
+.icon {
+    color: #fff;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 50%;
+    height: 12vh;
+    width: 12vh;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(100, 100, 100, 0.5);
+}
